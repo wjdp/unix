@@ -31,12 +31,7 @@ const RELATIVE_TIME_OPTIONS: {
 const getRelativeTimeUnit = (deltaSeconds: number) => {
   const deltaSecondsAbs = Math.abs(deltaSeconds);
   for (const { value, unit, divisor } of RELATIVE_TIME_OPTIONS) {
-    if (deltaSecondsAbs < value) {
-      console.log(
-        `deltaSecondsAbs: ${deltaSecondsAbs}, value: ${value}, unit: ${unit}, divisor: ${divisor}`,
-      );
-      return { divisor, unit };
-    }
+    if (deltaSecondsAbs < value) return { divisor, unit };
   }
   return { unit: "years", divisor: 29030400 };
 };

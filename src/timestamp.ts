@@ -10,7 +10,6 @@ export type Precision = keyof typeof PRECISIONS;
 export function getTimestampPrecision(timestamp: number): Precision {
   // log10n + 1
   const length = Math.floor(Math.log10(timestamp)) + 1;
-  console.log("length", length);
   if (length >= PRECISIONS.nanoseconds) {
     return "nanoseconds";
   } else if (length >= PRECISIONS.microseconds) {
