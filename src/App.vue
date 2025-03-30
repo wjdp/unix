@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { AkGithubFill } from "@kalimahapps/vue-icons";
 import { computed, ref, watch } from "vue";
 import Button from "./components/Button.vue";
 import CopyMe from "./components/CopyMe.vue";
@@ -160,5 +161,11 @@ const setTimestampNow = () => {
       A lightweight utility by
       <a href="https://wjdp.uk" class="underline">wjdp.uk</a>
     </footer>
+    <a
+      href="https://github.com/wjdp/unix"
+      class="absolute top-2 right-4 text-slate-100 text-sm opacity-30"
+    >
+      <AkGithubFill class="inline-block ml-1" />
+    </a>
   </main>
 </template>
