@@ -1,5 +1,5 @@
 {
-  "name": "worker-name",
+  "name": "unix",
   "compatibility_date": "2025-03-30",
   "build": {
     "command": "pnpm run build",
