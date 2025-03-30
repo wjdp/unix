@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-const props = defineProps<{
+defineProps<{
   modelValue: number | undefined;
 }>();
 const emit = defineEmits<{
@@ -11,7 +11,9 @@ const emit = defineEmits<{
 const maxValue = Math.pow(10, 21) - 1;
 const invalid = ref(false);
 
-const handleInput = (value: number | null) => {
+const handleInput = (event: Event) => {
+  const input = event.target as HTMLInputElement;
+  const value = parseInt(input.value, 10);
   if (!value) {
     invalid.value = false;
     emit("update:modelValue", null);
@@ -40,7 +42,7 @@ const handleInput = (value: number | null) => {
       '!border-red-500': invalid,
     }"
     :value="modelValue"
-    @input.number="handleInput($event.target.value)"
+    @input="handleInput"
     :min="0"
     :max="maxValue"
     :step="1"

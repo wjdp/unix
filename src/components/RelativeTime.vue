@@ -14,7 +14,12 @@ const RELATIVE_TIME_FORMAT = new Intl.RelativeTimeFormat("en", {
   numeric: "auto",
 });
 
-const RELATIVE_TIME_OPTIONS = [
+const RELATIVE_TIME_OPTIONS: {
+  value: number;
+  // @ts-ignore: RelativeTimeFormatUnit is not recognized by TypeScript
+  unit: RelativeTimeFormatUnit;
+  divisor: number;
+}[] = [
   { value: 60, unit: "seconds", divisor: 1 },
   { value: 3600, unit: "minutes", divisor: 60 },
   { value: 86400, unit: "hours", divisor: 3600 },
