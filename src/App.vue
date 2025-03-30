@@ -98,7 +98,9 @@ const setTimestampNow = () => {
 </script>
 
 <template>
-  <main class="flex flex-col items-center min-h-screen bg-slate-600">
+  <main
+    class="flex flex-col items-center min-h-screen bg-slate-600 bg-gradient-to-b from-slate-700 via-slate-800 to-slate-900"
+  >
     <div class="grow flex flex-col justify-center">
       <div
         class="flex flex-col items-center justify-center bg-slate-200 px-4 py-4 border-3 border-slate-500 rounded-2xl gap-4 w-sm sm:w-lg"
